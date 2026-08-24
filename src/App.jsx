@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,6 +16,19 @@ import Toast from './components/Toast';
 export default function App() {
   const [resumeOpen, setResumeOpen] = useState(false);
   const [toasts, setToasts] = useState([]);
+
+  // Always reset scroll to the very top (Hero section) on page load/refresh
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // If there is an anchor hash in URL on refresh, remove it so browser doesn't auto-scroll
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }, []);
 
   const showToast = (message) => {
     const id = Date.now();
