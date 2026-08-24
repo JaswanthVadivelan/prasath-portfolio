@@ -15,7 +15,7 @@ function createResume() {
   const stream = fs.createWriteStream(filePath1);
   doc.pipe(stream);
 
-  // Styling palette (Matching website palette)
+  // Styling palette
   const PRIMARY_TEXT = '#172033';
   const SECONDARY_TEXT = '#5B6577';
   const PRIMARY_BLUE = '#155EEF';
@@ -27,9 +27,9 @@ function createResume() {
   doc.fillColor(PRIMARY_BLUE).fontSize(11).font('Helvetica-Bold').text('Technical Support Engineer | IT Operations | System Administration', { align: 'center' });
   doc.moveDown(0.2);
   
-  // Contact bar
+  // Contact bar (Without GitHub)
   doc.fillColor(SECONDARY_TEXT).fontSize(9).font('Helvetica')
-     .text('Chennai, India  |  +91 8122126203  |  hariprasath2954@gmail.com  |  linkedin.com/in/prasathmurugan  |  github.com/prasathm', { align: 'center' });
+     .text('Chennai, India  |  +91 8122126203  |  hariprasath2954@gmail.com  |  linkedin.com/in/prasathmurugan', { align: 'center' });
   
   doc.moveDown(0.5);
   // Divider line
@@ -47,7 +47,7 @@ function createResume() {
   // Summary
   addSectionHeader('Professional Summary');
   doc.fillColor(PRIMARY_TEXT).fontSize(9.5).font('Helvetica')
-     .text('Enterprise IT support professional with 6+ months of experience supporting Windows infrastructure, Active Directory, Microsoft 365, endpoint environments, networking, identity and access management, and systematic incident resolution. Proven track record supporting enterprise-scale environments comprising 6,000+ endpoints/users and multi-platform Linux-to-AD integrations.', { align: 'justify' });
+     .text('Enterprise IT support professional with experience supporting Windows infrastructure, Active Directory, Microsoft 365, endpoint environments, networking, identity and access management, and systematic incident resolution. Proven track record supporting enterprise-scale environments comprising 6,000+ endpoints/users and multi-platform Linux-to-AD integrations.', { align: 'justify' });
   doc.moveDown(0.6);
 
   // Experience
@@ -136,7 +136,7 @@ function createResume() {
 
   stream.on('finish', () => {
     fs.copyFileSync(filePath1, filePath2);
-    console.log('PDF Resumes generated successfully!');
+    console.log('PDF Resumes generated successfully (GitHub removed)!');
   });
 }
 

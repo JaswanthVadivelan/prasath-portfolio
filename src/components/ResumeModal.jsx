@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Download, Printer, FileText, CheckCircle2, Shield, Building2, ExternalLink } from 'lucide-react';
+import { X, Download, FileText } from 'lucide-react';
 
 export default function ResumeModal({ isOpen, onClose }) {
   if (!isOpen) return null;
@@ -11,10 +11,6 @@ export default function ResumeModal({ isOpen, onClose }) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
-
-  const handlePrint = () => {
-    window.print();
   };
 
   return (
@@ -46,7 +42,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                 Technical Support Engineer | IT Operations | System Administration
               </div>
               <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>
-                Chennai, India &bull; +91 8122126203 &bull; hariprasath2954@gmail.com &bull; linkedin.com/in/prasathmurugan &bull; github.com/prasathm
+                Chennai, India &bull; +91 8122126203 &bull; hariprasath2954@gmail.com &bull; linkedin.com/in/prasathmurugan
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, MapPin } from 'lucide-react';
-import { LinkedinIcon, GithubIcon } from './SocialIcons';
+import { LinkedinIcon } from './SocialIcons';
 
 export default function Footer() {
   return (
@@ -36,18 +36,6 @@ export default function Footer() {
               >
                 <LinkedinIcon size={14} />
                 LinkedIn
-              </a>
-            </li>
-            <li>
-              <a 
-                href="https://github.com/prasathm" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="footer-link"
-                id="footer-github-link"
-              >
-                <GithubIcon size={14} />
-                GitHub
               </a>
             </li>
           </ul>

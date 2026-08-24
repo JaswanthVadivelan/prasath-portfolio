@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Download, Copy, Check, Send } from 'lucide-react';
-import { LinkedinIcon, GithubIcon } from './SocialIcons';
+import { LinkedinIcon } from './SocialIcons';
 
 export default function Contact({ onOpenResume, onShowToast }) {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -11,7 +11,6 @@ export default function Contact({ onOpenResume, onShowToast }) {
   const email = 'hariprasath2954@gmail.com';
   const phone = '+91 8122126203';
   const linkedin = 'https://www.linkedin.com/in/prasathmurugan/';
-  const github = 'https://github.com/prasathm';
 
   const copyToClipboard = (text, type) => {
     navigator.clipboard.writeText(text);
@@ -101,20 +100,16 @@ export default function Contact({ onOpenResume, onShowToast }) {
                 </div>
               </div>
 
-              {/* LinkedIn & GitHub Links */}
+              {/* LinkedIn Link */}
               <div className="contact-detail-item">
                 <div className="contact-detail-icon">
                   <LinkedinIcon size={20} />
                 </div>
                 <div className="contact-detail-text">
-                  <span>LinkedIn & GitHub</span>
+                  <span>LinkedIn Profile</span>
                   <div style={{ display: 'flex', gap: '16px', marginTop: '2px' }}>
                     <a href={linkedin} target="_blank" rel="noopener noreferrer" id="contact-linkedin-link">
                       prasathmurugan
-                    </a>
-                    <span style={{ color: 'var(--border-color)' }}>|</span>
-                    <a href={github} target="_blank" rel="noopener noreferrer" id="contact-github-link">
-                      prasathm
                     </a>
                   </div>
                 </div>
